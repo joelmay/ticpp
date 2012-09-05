@@ -664,7 +664,7 @@ Element* Node::ToElement() const
 	return temp;
 }
 
-Comment* Node::ToComment() const
+ticpp::Comment* Node::ToComment() const
 {
 	TiXmlComment* doc = GetTiXmlPointer()->ToComment();
 	if ( 0 == doc )
@@ -738,18 +738,18 @@ bool Node::Accept( TiXmlVisitor* visitor ) const
 
 //*****************************************************************************
 
-Comment::Comment()
+ticpp::Comment::Comment()
 : NodeImp< TiXmlComment >( new TiXmlComment() )
 {
 	m_impRC->InitRef();
 }
 
-Comment::Comment( TiXmlComment* comment )
+ticpp::Comment::Comment( TiXmlComment* comment )
 : NodeImp< TiXmlComment >( comment )
 {
 }
 
-Comment::Comment( const std::string& comment )
+ticpp::Comment::Comment( const std::string& comment )
 : NodeImp< TiXmlComment >( new TiXmlComment() )
 {
 	m_impRC->InitRef();
